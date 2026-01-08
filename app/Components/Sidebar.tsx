@@ -399,7 +399,7 @@ const Sidebar = ({ isMobileOpen = false, onClose }: SidebarProps) => {
                     exit={{ opacity: 0, width: 0 }}
                     className="flex-1 overflow-hidden"
                   >
-                    <p className="text-sm font-medium text-white">Alex Johnson</p>
+                    <p className="text-sm font-medium text-white">Abuzar Ali</p>
                     <p className="text-xs text-gray-400">Admin</p>
                   </motion.div>
                 )}

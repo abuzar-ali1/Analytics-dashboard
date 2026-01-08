@@ -187,7 +187,7 @@ const Header = ({ onMenuClick, isSidebarOpen = false }: HeaderProps) => {
                 <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-500" />
                 
                 <div className="hidden sm:block text-left">
-                  <p className="text-xs sm:text-sm font-medium text-white">Alex Johnson</p>
+                  <p className="text-xs sm:text-sm font-medium text-white">Abuzar Ali</p>
                   <p className="text-xs text-gray-400 hidden md:block">Admin</p>
                 </div>
               </motion.button>
