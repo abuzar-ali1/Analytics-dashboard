@@ -1,4 +1,3 @@
-// components/dashboard/KpiCard.tsx (updated)
 'use client';
 
 import { motion } from 'framer-motion';

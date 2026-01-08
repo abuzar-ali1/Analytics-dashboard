@@ -1,4 +1,3 @@
-// components/dashboard/DataTable.tsx
 'use client';
 
 import { useState } from 'react';

@@ -1,4 +1,3 @@
-// components/dashboard/LiveMetrics.tsx
 'use client';
 
 import { useState, useEffect } from 'react';

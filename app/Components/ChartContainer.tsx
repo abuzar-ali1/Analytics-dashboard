@@ -175,7 +175,6 @@ export default function ChartContainer({
         );
         
       default:
-        // TypeScript knows we've handled all cases, but adding default for safety
         return null;
     }
   };

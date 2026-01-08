@@ -1,4 +1,3 @@
-// components/dashboard/GitHubStatsCards.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -12,7 +11,6 @@ import {
   TrendingUp,
   Globe
 } from 'lucide-react';
-// import KpiCard from './KpiCard';
 import { useGitHubStats } from '@/hooks/useGitHubStats';
 import KpiCard from '../Components/KpiCard';
 
@@ -29,7 +27,7 @@ export default function GitHubStatsCards({ repoPath = "vercel/next.js" }: GitHub
     size: '+5%'
   });
 
-  // Use your existing useGitHubStats hook
+  // Using existing useGitHubStats hook
   const { data, isLoading, error, refetch } = useGitHubStats(repoPath);
 
   // Handle manual refresh
