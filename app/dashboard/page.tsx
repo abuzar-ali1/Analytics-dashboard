@@ -192,7 +192,6 @@ export default function DashboardPage() {
                                 Analyze
                             </button>
                             <button
-                            onClick={handleComingSoon}
                                 type="button"
                                 onClick={handleRefresh}
                                 className="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2 text-sm text-white hover:bg-gray-700"
