@@ -17,16 +17,29 @@ const COLORS = ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444'];
 
 export default function ChartContainer({ title, description, type, data, isLoading, dataKey = 'value', color = '#3b82f6' }: ChartProps) {
   
+  const hasData = data && data.length > 0;
+
   if (isLoading) {
     return (
-      <div className="h-full w-full bg-[#161b22] border border-gray-800 rounded-xl flex items-center justify-center">
+      <div className="h-full w-full min-h-[350px] bg-[#161b22] border border-gray-800 rounded-xl flex items-center justify-center">
         <Loader2 className="w-8 h-8 animate-spin text-gray-600" />
       </div>
     );
   }
 
+  if (!hasData) {
+    return (
+      <div className="h-full w-full min-h-[350px] bg-[#161b22] border border-gray-800 rounded-xl p-6 flex items-center justify-center text-center">
+        <div>
+          <p className="text-gray-400 text-sm">No chart data available yet.</p>
+          <p className="text-gray-500 text-xs mt-2">Either the GitHub API response is empty or the repository has no recent commits.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="h-full w-full bg-[#161b22] border border-gray-800 rounded-xl p-6 flex flex-col">
+    <div className="h-full w-full min-h-[350px] bg-[#161b22] border border-gray-800 rounded-xl p-6 flex flex-col">
       <div className="mb-6">
         <h3 className="text-white font-semibold">{title}</h3>
         <p className="text-gray-500 text-xs">{description}</p>
