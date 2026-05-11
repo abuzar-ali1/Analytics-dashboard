@@ -17,7 +17,7 @@ const fetchCommits = async (repoPath: string, range: string) => {
                 },
             }
         );
-
+        
         if (!response.ok) {
             console.warn(`GitHub API Error: ${response.status} for ${repoPath}`);
             return [];
@@ -28,8 +28,8 @@ const fetchCommits = async (repoPath: string, range: string) => {
         }
 
         const data = await response.json();
+        console.log("Fetched Commits Data:", data);
 
-       
         if (!Array.isArray(data)) {
             return [];
         }
