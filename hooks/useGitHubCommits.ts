@@ -2,7 +2,6 @@
 import { useQuery } from '@tanstack/react-query';
 
 const fetchCommits = async (repoPath: string, range: string) => {
-    // 1. Guard Clause: Don't fetch if input is invalid
     if (!repoPath || !repoPath.includes('/')) return [];
 
     const [owner, repo] = repoPath.split('/');
@@ -28,7 +27,6 @@ const fetchCommits = async (repoPath: string, range: string) => {
         }
 
         const data = await response.json();
-        console.log("Fetched Commits Data:", data);
 
         if (!Array.isArray(data)) {
             return [];
