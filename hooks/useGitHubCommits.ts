@@ -23,7 +23,8 @@ const fetchCommits = async (repoPath: string, range: string) => {
         }
 
         if (response.status === 202) {
-            return []; 
+            console.warn(`GitHub API Warning: ${repoPath} commit stats are still being generated (202).`);
+            return [];
         }
 
         const data = await response.json();

@@ -45,7 +45,7 @@ export default function ChartContainer({ title, description, type, data, isLoadi
         <p className="text-gray-500 text-xs">{description}</p>
       </div>
 
-      <div className="flex-1 w-full min-h-0">
+      <div className="h-[320px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           {type === 'area' ? (
             <AreaChart data={data}>

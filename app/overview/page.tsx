@@ -59,9 +59,11 @@ export default function DashboardPage() {
         setShowSuggestions(false);
     };
 
-    const chartData = commitsData?.slice(0, 7).map((c: any, i: number) => ({
-        name: `Day ${i + 1}`,
-        commits: c.total || Math.floor(Math.random() * 50) 
+    const chartData = commitsData?.slice(-7).map((c: any, i: number) => ({
+        name: c.week
+            ? new Date(c.week * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+            : `Week ${i + 1}`,
+        commits: typeof c.total === 'number' ? c.total : 0
     })) || [];
 
     const pieData = languagesData ? Object.entries(languagesData).slice(0, 5).map(([name, value]) => ({
