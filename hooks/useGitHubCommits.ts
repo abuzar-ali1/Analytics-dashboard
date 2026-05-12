@@ -28,7 +28,7 @@ const fetchCommits = async (repoPath: string, range: string) => {
         }
 
         const data = await response.json();
-        console.log("Fetched Commits Data:", data);
+        // console.log("Fetched Commits Data:", data);
         
         if (!Array.isArray(data)) {
             return [];
