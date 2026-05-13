@@ -17,6 +17,7 @@ const SUGGESTIONS = [
     'facebook/react',
     'vercel/next.js',
     'tailwindlabs/tailwindcss',
+    'django/django',
     'shadcn-ui/ui',
     'microsoft/TypeScript'
 ];

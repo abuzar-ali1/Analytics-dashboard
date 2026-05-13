@@ -13,6 +13,7 @@ const SUGGESTIONS = [
   'abuzar-ali1/dummy-shop',
   'vercel/next.js',
   'tailwindlabs/tailwindcss',
+  'django/django',
   'microsoft/TypeScript'
 ];
 
