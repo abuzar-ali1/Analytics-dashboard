@@ -2,16 +2,19 @@
 import { useQuery } from '@tanstack/react-query';
 
 const fetchCommits = async (repoPath: string, range: string) => {
+    console.log("Fetching commits for:", repoPath, "Range:", range);
     if (!repoPath || !repoPath.includes('/')) return [];
 
     const [owner, repo] = repoPath.split('/');
     
     try {
+        const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+        console.log("Token exists:", !!token);
         const response = await fetch(
             `https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`,
             {
                 headers: {
-                    Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+                    Authorization: `Bearer ${token}`,
                     'Accept': 'application/vnd.github.v3+json' 
                 },
             }
@@ -28,9 +31,10 @@ const fetchCommits = async (repoPath: string, range: string) => {
         }
 
         const data = await response.json();
-        // console.log("Fetched Commits Data:", data);
+        console.log("Fetched Commits Data:", data);
         
         if (!Array.isArray(data)) {
+            console.warn("Commits data is not an array:", data);
             return [];
         }
 
@@ -49,6 +53,5 @@ export const useGitHubCommits = (repoPath: string, range: string) => {
         // Retry less often if it fails, to avoid hitting rate limits
         retry: 1, 
         staleTime: 5 * 60 * 1000,
-        initialData: [], 
     });
 };

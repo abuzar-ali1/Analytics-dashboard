@@ -33,9 +33,6 @@ export function useCommits() {
       const rawData = await response.json();
       setTotalCommits(rawData.length);
 
-      // --- THE "MAILBOX" LOGIC ---
-      
-      // 1. Count commits for every slot
       const counts: Record<string, number> = {};
       
       rawData.forEach((item: any) => {
@@ -46,7 +43,6 @@ export function useCommits() {
         counts[key] = (counts[key] || 0) + 1;
       });
 
-      // 2. Fill the empty slots (0 commits) so the grid is perfect
       const chartData: PunchCardData[] = [];
       for (let d = 0; d < 7; d++) {
         for (let h = 0; h < 24; h++) {
