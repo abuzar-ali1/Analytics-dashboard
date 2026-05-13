@@ -33,7 +33,7 @@ export default function DashboardPage() {
     const { data: issuesData, isLoading: issuesLoading } = useGitHubIssues(repoPath);
     
     const searchContainerRef = useRef<HTMLDivElement>(null);
-    console.log(commitsData);
+
     
 
     useEffect(() => {
